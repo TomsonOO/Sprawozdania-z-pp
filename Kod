@@ -1,12 +1,25 @@
-int prosta_funkcja( int a )
+double squareRoot(int liczba, double dokladnosc)
 {
-    int test = 10;\
-    printf("%c", a);
-    a = 2020;
-    printf("%c", a);
-    printf("%c", test);
+    dokladnosc *= 0.1;
+    double pierwiastek = 1.0;
+    double temp;
+    // obliczenia pierwiastka za pomocÄ wzoru Herona
+    do
+    {
+        temp = pierwiastek;
+        pierwiastek = 0.5 * (temp + liczba/temp);
 
-    printf("wewnatrz prostej funkcji: \n");
+        // sprawdzenie warunku wyjĹcia z pÄtli - bĹÄd wzglÄdny obliczania pierwiastka
+    }
+    while(fabs(pierwiastek*pierwiastek - liczba)/liczba > dokladnosc);
 
-    return 0;
+
+    printf("\nliczba %20.15lf, zaĹoĹźona dokĹadnoĹÄ obliczania pierwiastka: %20.15lf\n",
+           liczba, dokladnosc);
+    printf("\tpierwiastek liczby: obliczony %20.15lf, dokĹadny %20.15lf\n",
+           pierwiastek, sqrt(liczba));
+    printf("\tbĹÄd bezwzglÄdny: %20.15lf, bĹÄd wzglÄdny: %20.15lf\n",
+           pierwiastek-sqrt(liczba), (pierwiastek-sqrt(liczba))/sqrt(liczba));
+
+
 }
