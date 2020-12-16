@@ -1,25 +1,2 @@
-double squareRoot(int liczba, double dokladnosc)
-{
-    dokladnosc *= 0.1;
-    double pierwiastek = 1.0;
-    double temp;
-    // obliczenia pierwiastka za pomocÄ wzoru Herona
-    do
-    {
-        temp = pierwiastek;
-        pierwiastek = 0.5 * (temp + liczba/temp);
-
-        // sprawdzenie warunku wyjĹcia z pÄtli - bĹÄd wzglÄdny obliczania pierwiastka
-    }
-    while(fabs(pierwiastek*pierwiastek - liczba)/liczba > dokladnosc);
-
-
-    printf("\nliczba %20.15lf, zaĹoĹźona dokĹadnoĹÄ obliczania pierwiastka: %20.15lf\n",
-           liczba, dokladnosc);
-    printf("\tpierwiastek liczby: obliczony %20.15lf, dokĹadny %20.15lf\n",
-           pierwiastek, sqrt(liczba));
-    printf("\tbĹÄd bezwzglÄdny: %20.15lf, bĹÄd wzglÄdny: %20.15lf\n",
-           pierwiastek-sqrt(liczba), (pierwiastek-sqrt(liczba))/sqrt(liczba));
-
-
-}
+#define ACCURACY (1.e-5) 
+double dokladnosc = ACCURACY;
