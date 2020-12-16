@@ -1,0 +1,12 @@
+int prosta_funkcja( int a )
+{
+    int test = 10;\
+    printf("%c", a);
+    a = 2020;
+    printf("%c", a);
+    printf("%c", test);
+
+    printf("wewnatrz prostej funkcji: \n");
+
+    return 0;
+}
